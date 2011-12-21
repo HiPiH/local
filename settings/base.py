@@ -4,12 +4,10 @@ import os
 def rel(*x):
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
 
-
-ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
-)
+TEMPLATE_DEBUG = DEBUG = False
+MANAGERS = ADMINS = ( ('HiPiH', 'admin@h-p.ru'),)
 ROOT_URLCONF = 'urls'
-MANAGERS = ADMINS
+
 TIME_ZONE = 'Russia/Moscow'
 LANGUAGE_CODE = 'ru-ru'
 SITE_ID = 1
@@ -45,6 +43,7 @@ INSTALLED_APPS = (
     # Manual setup
     'cron',
     'index',
+    'http_reader'
 
 )
 
@@ -52,3 +51,15 @@ INSTALLED_APPS = (
 
 TEMPLATE_DIRS = (rel('../templates/'),)
 MEDIA_ROOT = rel('../media/')
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'db/main.db',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
