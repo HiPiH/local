@@ -1,0 +1,8 @@
+*.pyc
+*.pyo
+.idea
+settings/local.py
+local_urls.py
+pip-log.txt
+*.*~
+*.db*
