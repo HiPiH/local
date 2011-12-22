@@ -1,0 +1,31 @@
+body,html{
+    margin: 0px;
+    padding: 0px;
+    font-family: Tahoma;
+    font-size: 13px;
+}
+
+#toolbar{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    background: orange url('../images/bgtb.png') repeat-x 0 0;
+    height:30px;
+    overflow: hidden;
+    border-bottom: 1px solid #777;
+    font-weight: bold;
+
+}
+#toolbar .full{
+   
+    height: 100%;
+    padding: 6px 5px ;
+}
+.item_left{
+    float: left;
+}
+.item_right{
+    float: right;
+}
+

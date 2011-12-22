@@ -2,7 +2,7 @@ import os
 
 
 def rel(*x):
-    return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
+    return os.path.join(os.path.abspath(os.path.dirname(__file__)),'..', *x)
 
 TEMPLATE_DEBUG = DEBUG = False
 MANAGERS = ADMINS = ( ('HiPiH', 'admin@h-p.ru'),)
@@ -14,8 +14,9 @@ SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 
-MEDIA_URL = ''
-ADMIN_MEDIA_PREFIX = '/media/'
+
+
+
 SECRET_KEY = 'ko*ab!agt)^db5*us__oe0ze_zko1cqv7cj)*)qxlq309aj$dj'
 
 TEMPLATE_LOADERS = (
@@ -32,6 +33,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.contrib.messages.context_processors.messages",
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,18 +51,21 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'django_evolution',
     # Manual setup
-    'cron',
     'index',
-    'http_reader'
+    'tweet',
+    
 
 )
 
 
 
-TEMPLATE_DIRS = (rel('../templates/'),)
-MEDIA_ROOT = rel('../media/')
-
+TEMPLATE_DIRS = (rel('templates/'),)
+MEDIA_ROOT = STATIC_ROOT = rel('media/')
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+ADMIN_MEDIA_PREFIX = '/admin/media/'
 
 DATABASES = {
     'default': {

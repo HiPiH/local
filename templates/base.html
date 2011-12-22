@@ -3,9 +3,15 @@
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
-    {% block head %}{% endblock %}
+
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/main_style.css" />
+
+    {% block head %}
+
+    {% endblock %}
 </head>
 <body>
+{% include "include/toolbar.html" %}
 {% block body %}{% endblock %}
 </body>
 </html>
