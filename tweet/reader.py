@@ -6,14 +6,14 @@ from urlparse import urljoin
 from urllib  import urlencode
 from django.utils import simplejson
 
-def Get(text, since_id=None, until=None, geocode=None, rpp=2, locale='ru', show_user='true',json=True):
+def Get(text, since_id=None, until=None, geocode=None, rpp=1000, locale='ru', show_user='true',json=True,result_type='mixed'):
     """Create url to tweet"""
     if type(text) is unicode:
         text = text.encode('utf8')
 
     param = {
-        'locale':locale,
-        'result_type':'mixed',
+        'lang':locale,
+        'result_type':result_type,
         'rpp':rpp,
         'show_user':show_user,
         'q':text,
@@ -25,6 +25,7 @@ def Get(text, since_id=None, until=None, geocode=None, rpp=2, locale='ru', show_
     if geocode:
         param["geocode"] = geocode 
     req =  Request('http://search.twitter.com/search.json',  urlencode(param))
+    print urlencode(param)
     url = urlopen(req)
     dict = url.read()
     if json:
