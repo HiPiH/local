@@ -13,7 +13,7 @@ admin.site.unregister((Version,Evolution))
 
 urlpatterns = patterns('',
     url(r'^', include('index.urls')),
-    #url(r'^', include('tweet.urls')),
+    url(r'^', include('tweet.urls')),
     url(r'^media/(?P<path>.*)$',
             'django.views.static.serve',
             {

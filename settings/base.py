@@ -58,8 +58,8 @@ INSTALLED_APPS = (
     
 
 )
-
-
+import sys
+print sys.path
 
 TEMPLATE_DIRS = (rel('templates/'),)
 MEDIA_ROOT = STATIC_ROOT = rel('media/')
