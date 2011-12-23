@@ -8,7 +8,7 @@ TEMPLATE_DEBUG = DEBUG = False
 MANAGERS = ADMINS = ( ('HiPiH', 'admin@h-p.ru'),)
 ROOT_URLCONF = 'urls'
 
-TIME_ZONE = 'Russia/Moscow'
+TIME_ZONE = 'Europe/Moscow'
 LANGUAGE_CODE = 'ru-ru'
 SITE_ID = 1
 USE_I18N = True
