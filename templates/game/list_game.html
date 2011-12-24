@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block title %}
+    Список игр
+{% endblock %}
+{% block head %}
+
+    <link rel="stylesheet" href="/media/profile.css">
+
+{% endblock %}
+{% block context %}
+
+    <div class="context">
+       <a href="/games/">Вернутся к списку игр</a>
+         <p><h1>Спсиок активных игр в &laquo;{{ game_name }}&raquo;</h1></p>
+         <p><a href="config"> Создать игру</a></p>
+         <p>
+
+            {% if games %}
+                 <ul>
+                    {% for g in games %}
+                    <li><a href="{{ g.key }}/">Началась в {{ g.date_create|date:"d-m-Y h-i"}} создал {{ g.user }}</a>
+
+                    </li>
+                    {% endfor %}
+                 </ul>
+            {% else%}
+                В данный момент, активных игр, нет.
+            {% endif %}
+         </p>
+    </div>
+{% endblock %}

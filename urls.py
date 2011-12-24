@@ -14,6 +14,7 @@ admin.site.unregister((Version,Evolution))
 urlpatterns = patterns('',
     url(r'^', include('index.urls')),
     url(r'^', include('tweet.urls')),
+    url(r'^game/', include('game.urls')),
     url(r'^media/(?P<path>.*)$',
             'django.views.static.serve',
             {

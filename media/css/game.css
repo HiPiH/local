@@ -1,0 +1,21 @@
+body{
+   background-image: url(../image/pool_table.png);
+
+
+    overflow: hidden;
+}
+#gameCanvas {
+  border: 1px solid #000;
+}
+#nobrowser{
+
+    margin: 20px;
+    padding: 30px 0px 30px 130px;
+    border:1px solid #EFE1AC;
+    background: #F9EDBE;
+    background: #F9EDBE;
+}
+#nobrowser h3{
+    color: red;
+}
+

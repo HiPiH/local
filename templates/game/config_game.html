@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% block title %}
+    Настройка {{ game_name }}
+{% endblock %}
+{% block head %}
+
+    <link rel="stylesheet" href="/media/profile.css">
+
+{% endblock %}
+{% block context %}
+    <div class="context">
+        <h1>Создание игры &laquo;{{ game_name }}&raquo;</h1>
+        <p>Перед тем как начать играть, следует произвести настройку игры. А так же прочесть <a href="/games/help/{{  help }}.html" target="_blank">правила</a>... </p>
+         <form  method="POST">{% csrf_token %}
+                    {%  for frm in form %}
+                         <dl>
+                            <dt><label>{{ frm.label_tag }} {% if frm.help_text %}( <label class='help'>{{ frm.help_text }}</label> ){% endif %}</label> </dt>
+                            <dt>{{ frm }}</dt>
+
+                            <dt>
+                              {{ frm.errors}}
+                            </dt>
+                         </dl>
+                    {%  endfor %}
+                    <input type="submit"  value="Создать"  style="button" />
+                </form> 
+
+                
+    </div>
+{% endblock %}

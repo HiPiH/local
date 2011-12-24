@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+        {{ game_title }}
+{% endblock %}
+{% block head %}
+    <!--[if lt IE 9]>
+       <script type="text/javascript"  src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+     <script type="text/javascript"  src="/media/prototype.js"></script>
+
+
+     <script type="text/javascript"  src="{{ MEDIA_URL }}lib/utils.js"></script>
+     <script type="text/javascript"  src="{{ MEDIA_URL }}lib/message.js" ></script>
+     <script type="text/javascript"  src="{{ MEDIA_URL }}lib/point.js"></script>
+     <script type="text/javascript"  src="{{ MEDIA_URL }}lib/color.js"></script>
+     <script type="text/javascript"  src="{{ MEDIA_URL }}lib/path.js"></script>
+     <script type="text/javascript"  src="{{ MEDIA_URL }}lib/event.js"></script>
+     <script type="text/javascript"  src="{{ MEDIA_URL }}lib/canvas.js"></script>
+     <script type="text/javascript"  src="{{ MEDIA_URL }}lib/ajax.js" ></script>
+     <script type="text/javascript"  src="{{ MEDIA_URL }}lib/inter.js" ></script>
+
+
+     <script type="text/javascript"  src="{{ MEDIA_URL }}initcard.js" ></script>
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/game.css">
+{% endblock %}
+{% block body %}
+    <canvas id="myCanvas2" class='canvase' width="800px" height="600px"></canvas>
+     <canvas id="myCanvas1" class='canvase' width="0px" height="0px"></canvas>
+  
+{% endblock %}
+
